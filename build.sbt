@@ -3,6 +3,7 @@ import sbt.Keys.libraryDependencies
 
 def itFilter(name: String): Boolean = name.endsWith("IT")
 
+// TODO: make sbt execute the cucumber specs
 lazy val root = project
   .enablePlugins(ScalafmtPlugin)
   .configs(IntegrationTest)
@@ -13,9 +14,13 @@ lazy val root = project
     scalaVersion := projectScalaVersion,
     Defaults.itSettings,
     libraryDependencies += scalaTest % "it,test",
-    // Cucumber CLI dependency
-    libraryDependencies += cucumber % Test,
     libraryDependencies += mockito % Test,
-    IntegrationTest / testOptions := Seq(Tests.Filter(itFilter))
+    IntegrationTest / testOptions := Seq(Tests.Filter(itFilter)),
+    // Cucumber CLI & Scala DSL dependency
+    libraryDependencies += cucumber % Test,
+    // Cucumber Runner dependencies
+    libraryDependencies += junit % Test,
+    libraryDependencies += junitSuite % Test,
+    libraryDependencies += cucumberJunit % Test
   )
 val projectScalaVersion = "2.13.10"
