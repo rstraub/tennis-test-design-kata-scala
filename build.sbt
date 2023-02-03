@@ -13,6 +13,8 @@ lazy val root = project
     scalaVersion := projectScalaVersion,
     Defaults.itSettings,
     libraryDependencies += scalaTest % "it,test",
+    // Cucumber CLI dependency
+    libraryDependencies += cucumber % Test,
     libraryDependencies += mockito % Test,
     IntegrationTest / testOptions := Seq(Tests.Filter(itFilter))
   )
