@@ -1,8 +1,15 @@
 package steps
 
-import org.junit.platform.suite.api.{ConfigurationParameter, IncludeEngines, SelectClasspathResource, Suite}
-import io.cucumber.junit.platform.engine.Constants.PLUGIN_PROPERTY_NAME
-import io.cucumber.junit.platform.engine.Constants.GLUE_PROPERTY_NAME
+import io.cucumber.junit.platform.engine.Constants.{
+  GLUE_PROPERTY_NAME,
+  PLUGIN_PROPERTY_NAME
+}
+import org.junit.platform.suite.api.{
+  ConfigurationParameter,
+  IncludeEngines,
+  SelectClasspathResource,
+  Suite
+}
 
 @Suite
 @IncludeEngines(Array("cucumber"))

@@ -17,6 +17,7 @@ class CanarySpec
 
   "canary" should {
     "run tests" in {
+      println("unit test ran")
       true shouldBe true
     }
   }

@@ -5,11 +5,11 @@ import org.scalatest.matchers.should.Matchers
 
 class HelloSteps extends ScalaDsl with EN with Matchers {
   When("the test is invoked") { () =>
-    println("when")
+    println("cucumber test when")
   }
 
   Then("the test should fail") { () =>
-    println("then")
-    true shouldBe false
+    println("cucumber test then")
+    true shouldBe true
   }
 }

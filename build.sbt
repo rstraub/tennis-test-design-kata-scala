@@ -12,15 +12,18 @@ lazy val root = project
     name := "BDD in Scala",
     version := "0.1.0-SNAPSHOT",
     scalaVersion := projectScalaVersion,
-    Defaults.itSettings,
     libraryDependencies += scalaTest % "it,test",
     libraryDependencies += mockito % Test,
-    IntegrationTest / testOptions := Seq(Tests.Filter(itFilter)),
     // Cucumber CLI & Scala DSL dependency
     libraryDependencies += cucumber % Test,
     // Cucumber Runner dependencies
+    libraryDependencies += "net.aichler" % "jupiter-interface" % "0.11.1" % Test,
     libraryDependencies += junit % Test,
     libraryDependencies += junitSuite % Test,
-    libraryDependencies += cucumberJunit % Test
+    libraryDependencies += cucumberJunit % Test,
+    Defaults.itSettings,
+    IntegrationTest / testOptions := Seq(Tests.Filter(itFilter))
   )
+
+//testOptions += Tests.Argument(TestFrameworks.JUnit)
 val projectScalaVersion = "2.13.10"

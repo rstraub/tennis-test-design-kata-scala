@@ -8,17 +8,3 @@ object Dependencies {
   lazy val junit = "org.junit.jupiter" % "junit-jupiter" % "5.9.2"
   lazy val junitSuite = "org.junit.platform" % "junit-platform-suite" % "1.9.2"
 }
-
-/*
-<dependency>
-            <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platform-suite</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
- */

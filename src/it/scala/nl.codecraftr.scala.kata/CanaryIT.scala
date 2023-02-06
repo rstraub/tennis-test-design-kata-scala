@@ -6,6 +6,7 @@ import org.scalatest.wordspec.AnyWordSpec
 class CanaryIT extends AnyWordSpec with Matchers {
   "integration spec" should {
     "be run too" in {
+      println("integration test ran")
       true shouldBe true
     }
   }
