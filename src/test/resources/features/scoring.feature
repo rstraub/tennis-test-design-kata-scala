@@ -30,14 +30,14 @@ Feature: Scoring a game of tennis
 
         Scenario Outline: the one where the score is "score-all"
             Given the points scored are
-                | player one   | player two   |
-                | <player_one> | <player_two> |
+                | player one | player two |
+                | <points>   | <points>   |
             When the score is called out
             Then it is "<score>"
 
             Examples:
-                | player_one | player_two | score       |
-                | 0          | 0          | love-all    |
-                | 1          | 1          | fifteen-all |
-                | 2          | 2          | thirty-all  |
+                | points | score       |
+                | 0      | love-all    |
+                | 1      | fifteen-all |
+                | 2      | thirty-all  |
 
