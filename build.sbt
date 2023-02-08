@@ -17,10 +17,8 @@ lazy val root = project
     // Cucumber CLI & Scala DSL dependency
     libraryDependencies += cucumber % Test,
     // Cucumber Runner dependencies
-    libraryDependencies += "net.aichler" % "jupiter-interface" % "0.11.1" % Test,
-    libraryDependencies += junit % Test,
-    libraryDependencies += junitSuite % Test,
     libraryDependencies += cucumberJunit % Test,
+    libraryDependencies += "com.github.sbt" % "junit-interface" % "0.13.3" % Test,
     Defaults.itSettings,
     IntegrationTest / testOptions := Seq(Tests.Filter(itFilter))
   )
