@@ -54,3 +54,17 @@ Feature: Scoring a game of tennis
                 | points |
                 | 3      |
                 | 4      |
+
+    Rule: The player who has one point more when both players have at least three points has advantage
+
+        Scenario Outline: the one where a player has the advantage
+            Given the points scored are
+                | player one   | player two   |
+                | <player_one> | <player_two> |
+            When the score is called out
+            Then it is "advantage <leader>"
+
+            Examples:
+                | player_one | player_two | leader     |
+                | 4          | 5          | player two |
+                | 6          | 5          | player one |
