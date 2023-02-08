@@ -12,6 +12,7 @@ lazy val root = project
     version := "0.1.0-SNAPSHOT",
     scalaVersion := projectScalaVersion,
     libraryDependencies += scalaTest % "it,test",
+    libraryDependencies += scalaCheck % Test,
     libraryDependencies += mockito % Test,
     // Cucumber CLI & Scala DSL dependency
     libraryDependencies += cucumber % Test,
