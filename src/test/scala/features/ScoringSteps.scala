@@ -20,6 +20,14 @@ class ScoringSteps extends ScalaDsl with EN with Matchers {
   }
 
   Then("""it is {string}""") { (expectedScore: String) =>
-      actualScore shouldBe expectedScore
+    actualScore shouldBe expectedScore
+  }
+
+  Then("""the advantage is for {string}""") { (leader: String) =>
+    actualScore shouldBe s"advantage $leader"
+  }
+
+  Then("""the winner is {string}""") { (winner: String) =>
+    actualScore shouldBe s"$winner wins"
   }
 }

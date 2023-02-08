@@ -2,10 +2,17 @@ package nl.codecraftr.scala.kata.tennis
 
 object TennisGame {
   def score(playerOnePoints: Int, playerTwoPoints: Int): String = {
-    if (isDeuce(playerOnePoints, playerTwoPoints)) "deuce"
+    if (hasWinner(playerOnePoints, playerTwoPoints))
+      s"${leadingPlayer(playerOnePoints, playerTwoPoints)} wins"
+    else if (isDeuce(playerOnePoints, playerTwoPoints)) "deuce"
     else if (isAdvantage(playerOnePoints, playerTwoPoints))
       s"advantage ${leadingPlayer(playerOnePoints, playerTwoPoints)}"
     else getRunningScore(playerOnePoints, playerTwoPoints)
+  }
+
+  private def hasWinner(playerOnePoints: Int, playerTwoPoints: Int) = {
+    val diff = playerOnePoints - playerTwoPoints
+    (playerOnePoints >= 4 || playerTwoPoints >= 4) && diff.abs >= 2
   }
 
   private def isDeuce(playerOnePoints: Int, playerTwoPoints: Int) =
