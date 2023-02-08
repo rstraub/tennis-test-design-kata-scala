@@ -1,10 +1,7 @@
 package nl.codecraftr.scala.kata.tennis
 
-case class Advantage(game: Game)
-    extends Score
-    with PlayerLeading {
-  override def describe: String =
-    s"advantage ${leadingPlayer(game.playerOnePoints, game.playerTwoPoints)}"
+case class Advantage(game: Game) extends Score {
+  override def describe: String = s"advantage ${game.leadingPlayer}"
 }
 
 object Advantage {

@@ -7,4 +7,8 @@ case class Game(playerOnePoints: Int, playerTwoPoints: Int) {
     else if (Advantage.applies(this)) Advantage(this)
     else RunningScore(this)
   }
+
+  def leadingPlayer =
+    if (playerOnePoints > playerTwoPoints) "player one"
+    else "player two"
 }
