@@ -8,7 +8,7 @@ case class Deuce(game: Game) extends Score {
 }
 
 object Deuce extends Applicable[Deuce] {
-  override def applies(game: Game): Option[Deuce] = {
+  override def appliesTo(game: Game): Option[Deuce] = {
     val applies =
       game.playerOnePoints >= 3 && game.playerTwoPoints >= 3 && game.playerOnePoints == game.playerTwoPoints
 
