@@ -1,10 +1,17 @@
 package features
 
+import io.cucumber.datatable.DataTable
 import io.cucumber.scala.{EN, ScalaDsl}
 import org.scalatest.matchers.should.Matchers
 
 class ScoringSteps extends ScalaDsl with EN with Matchers {
-  Given("""player one has {int} points""") { (points: Int) =>
+  Given("""the points scored are""") { (points: DataTable) =>
+    val playerOne = points.cell(1, 0)
+    val playerTwo = points.cell(1, 1)
+    println(s"points $playerOne - $playerTwo")
+  }
+
+    Given("""player one has {int} points""") { (points: Int) =>
     println(s"player one points $points")
   }
 

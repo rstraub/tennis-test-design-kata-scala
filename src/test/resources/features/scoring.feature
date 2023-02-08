@@ -3,8 +3,9 @@ Feature: Scoring a game of tennis
     Rule: Individual scores are called out when either player leads
 
         Scenario Outline: the one where either player leads
-            Given player one has <player_one> points
-            And player two has <player_two> points
+            Given the points scored are
+                | player one   | player two   |
+                | <player_one> | <player_two> |
             When the score is called out
             Then it is "<score>"
 
