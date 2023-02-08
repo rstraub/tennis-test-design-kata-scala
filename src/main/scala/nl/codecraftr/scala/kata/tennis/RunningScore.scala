@@ -23,8 +23,8 @@ case class RunningScore(game: Game) extends Score {
     }
 }
 
-case object RunningScore {
-  def applies(game: Game): Boolean = {
-    ???
-  }
+object RunningScore extends Applicable[RunningScore] {
+    override def applies(game: Game): Option[RunningScore] = {
+      Some(RunningScore(game))
+    }
 }
