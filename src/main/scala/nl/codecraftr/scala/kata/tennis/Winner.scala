@@ -1,15 +1,15 @@
 package nl.codecraftr.scala.kata.tennis
 
-case class Winner(playerOnePoints: Int, playerTwoPoints: Int)
+case class Winner(game: Game)
     extends Score
     with PlayerLeading {
   override def describe: String =
-    s"${leadingPlayer(playerOnePoints, playerTwoPoints)} wins"
+    s"${leadingPlayer(game.playerOnePoints, game.playerTwoPoints)} wins"
 }
 
 object Winner {
-  def applies(playerOnePoints: Int, playerTwoPoints: Int): Boolean = {
-    val diff = playerOnePoints - playerTwoPoints
-    (playerOnePoints >= 4 || playerTwoPoints >= 4) && diff.abs >= 2
+  def applies(game: Game): Boolean = {
+    val diff = game.playerOnePoints - game.playerTwoPoints
+    (game.playerOnePoints >= 4 || game.playerTwoPoints >= 4) && diff.abs >= 2
   }
 }

@@ -1,6 +1,6 @@
 package nl.codecraftr.scala.kata.tennis
 
-case class RunningScore(playerOnePoints: Int, playerTwoPoints: Int)
+case class RunningScore(game: Game)
     extends Score {
   override def describe: String = {
     def toScore(points: Int) =
@@ -11,16 +11,16 @@ case class RunningScore(playerOnePoints: Int, playerTwoPoints: Int)
         case 3 => "forty"
       }
 
-    val playerOneScore = toScore(playerOnePoints)
+    val playerOneScore = toScore(game.playerOnePoints)
 
-    val playerTwoScore = toScore(playerTwoPoints)
+    val playerTwoScore = toScore(game.playerTwoPoints)
     if (playerOneScore == playerTwoScore) s"$playerOneScore-all"
     else s"$playerOneScore-$playerTwoScore"
   }
 }
 
 case object RunningScore {
-  def applies(playerOnePoints: Int, playerTwoPoints: Int): Boolean = {
+  def applies(game: Game): Boolean = {
     ???
   }
 }
