@@ -4,12 +4,19 @@ import io.cucumber.scala.{EN, ScalaDsl}
 import org.scalatest.matchers.should.Matchers
 
 class ScoringSteps extends ScalaDsl with EN with Matchers {
-  When("the test is invoked") { () =>
-    println("cucumber test when")
+  Given("""player one has {int} points""") { (points: Int) =>
+    println(s"player one points $points")
   }
 
-  Then("the test should fail") { () =>
-    println("cucumber test then")
-    true shouldBe true
+  Given("""player two has {int} points""") { (points: Int) =>
+    println(s"player two points $points")
+  }
+
+  When("""the score is called out""") { () =>
+    println("called out")
+  }
+
+  Then("""it is {string}""") { (score: String) =>
+      println(s"score is $score")
   }
 }
