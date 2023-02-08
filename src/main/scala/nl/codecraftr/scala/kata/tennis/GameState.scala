@@ -1,11 +1,11 @@
 package nl.codecraftr.scala.kata.tennis
 
-trait Applicable[+T <: Score] {
+trait GameState[+T <: Score] {
   def appliesTo(game: Game): Option[T]
 }
 
-object Applicable {
-  def all: Seq[Applicable[Score]] = Seq(
+object GameState {
+  def all: Seq[GameState[Score]] = Seq(
     Winner,
     Advantage,
     Deuce,
