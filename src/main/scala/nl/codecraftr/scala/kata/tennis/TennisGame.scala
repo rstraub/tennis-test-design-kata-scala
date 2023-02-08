@@ -5,8 +5,10 @@ object TennisGame {
     val playerOneScore = toScore(playerOnePoints)
     val playerTwoScore = toScore(playerTwoPoints)
 
-    if (playerOneScore == playerTwoScore) s"$playerOneScore-all"
-    else s"$playerOneScore-$playerTwoScore"
+    if (playerOneScore == playerTwoScore) {
+      if (playerOnePoints < 3) s"$playerOneScore-all"
+      else "deuce"
+    } else s"$playerOneScore-$playerTwoScore"
   }
 
   private def toScore(points: Int) =
@@ -15,5 +17,6 @@ object TennisGame {
       case 1 => "fifteen"
       case 2 => "thirty"
       case 3 => "forty"
+      case _ => "advantage"
     }
 }

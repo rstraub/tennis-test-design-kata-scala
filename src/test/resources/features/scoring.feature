@@ -41,3 +41,16 @@ Feature: Scoring a game of tennis
                 | 1      | fifteen-all |
                 | 2      | thirty-all  |
 
+    Rule: Score is deuce when players have the same score and three or more points
+
+        Scenario Outline: the one where the score is "deuce"
+            Given the points scored are
+                | player one | player two |
+                | <points>   | <points>   |
+            When the score is called out
+            Then it is "deuce"
+
+            Examples:
+                | points |
+                | 3      |
+                | 4      |
