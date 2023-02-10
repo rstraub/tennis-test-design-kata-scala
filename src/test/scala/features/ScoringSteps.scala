@@ -19,7 +19,7 @@ class ScoringSteps extends ScalaDsl with EN with Matchers {
     actualScore = TennisGame.score(playerOnePoints, playerTwoPoints)
   }
 
-  Then("""it is {string}""") { (expectedScore: String) =>
+  Then("""the score should be {string}""") { (expectedScore: String) =>
     actualScore shouldBe expectedScore
   }
 

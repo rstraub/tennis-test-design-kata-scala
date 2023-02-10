@@ -9,7 +9,7 @@ Feature: Scoring a game of tennis
                 | player one   | player two   |
                 | <player_one> | <player_two> |
             When the score is called out
-            Then it is "<score>"
+            Then the score should be "<score>"
 
             Examples:
                 | player_one | player_two | score          |
@@ -33,7 +33,7 @@ Feature: Scoring a game of tennis
                 | player one | player two |
                 | <points>   | <points>   |
             When the score is called out
-            Then it is "<score>"
+            Then the score should be "<score>"
 
             Examples:
                 | points | score       |
@@ -48,7 +48,7 @@ Feature: Scoring a game of tennis
                 | player one | player two |
                 | <points>   | <points>   |
             When the score is called out
-            Then it is "deuce"
+            Then the score should be "deuce"
 
             Examples:
                 | points |
