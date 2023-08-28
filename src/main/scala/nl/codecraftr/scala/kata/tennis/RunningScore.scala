@@ -1,6 +1,6 @@
 package nl.codecraftr.scala.kata.tennis
 
-case class RunningScore(game: Game) extends Score {
+private[tennis] case class RunningScore(game: Game) extends Score {
   private val LOVE = "love"
   private val FIFTEEN = "fifteen"
   private val THIRTY = "thirty"
@@ -23,7 +23,7 @@ case class RunningScore(game: Game) extends Score {
     }
 }
 
-object RunningScore extends GameState[RunningScore] {
+private[tennis] object RunningScore extends GameState[RunningScore] {
   override def appliesTo(game: Game): Option[RunningScore] = {
     Some(RunningScore(game))
   }

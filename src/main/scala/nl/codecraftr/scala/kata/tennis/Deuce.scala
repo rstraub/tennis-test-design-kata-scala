@@ -2,12 +2,12 @@ package nl.codecraftr.scala.kata.tennis
 
 import scala.Option.when
 
-case class Deuce(game: Game) extends Score {
+private[tennis] case class Deuce(game: Game) extends Score {
   override def describe: String = "deuce"
 
 }
 
-object Deuce extends GameState[Deuce] {
+private[tennis] object Deuce extends GameState[Deuce] {
   override def appliesTo(game: Game): Option[Deuce] = {
     val applies =
       game.playerOnePoints >= 3 && game.playerTwoPoints >= 3 && game.playerOnePoints == game.playerTwoPoints

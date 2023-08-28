@@ -121,5 +121,16 @@ class TennisSpec extends AnyFlatSpec with Matchers {
     }
   }
 
-  // Test impl, not behavior
+  // TODO explain the flaw and improve the test
+  it should "return the leading player" in {
+    Game(1, 0).leadingPlayer shouldBe "player one"
+    Game(0, 1).leadingPlayer shouldBe "player two"
+  }
+
+  // TODO explain the flaw and improve the test
+  it should "return whether Deuce is applicable" in {
+    Deuce appliesTo Game(4, 4) shouldBe Some(Deuce(Game(4, 4)))
+    Deuce appliesTo Game(5, 4) shouldBe None
+    Deuce appliesTo Game(4, 5) shouldBe None
+  }
 }

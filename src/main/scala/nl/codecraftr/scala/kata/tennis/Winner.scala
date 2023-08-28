@@ -2,11 +2,11 @@ package nl.codecraftr.scala.kata.tennis
 
 import scala.Option.when
 
-case class Winner(game: Game) extends Score {
+private[tennis] case class Winner(game: Game) extends Score {
   override def describe: String = s"${game.leadingPlayer} wins"
 }
 
-object Winner extends GameState[Winner] {
+private[tennis] object Winner extends GameState[Winner] {
   def appliesTo(game: Game): Option[Winner] = {
     val diff = game.playerOnePoints - game.playerTwoPoints
     val applies =

@@ -1,5 +1,5 @@
 package nl.codecraftr.scala.kata.tennis
 
-trait Score {
+private[tennis] trait Score {
   def describe: String
 }
