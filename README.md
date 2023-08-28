@@ -5,11 +5,13 @@ The program is already implemented, with a set of tests, but the tests violate p
 
 It's up to you to find the flaw in the tests and fix them. For bonus points leave a comment what violation the test had.
 
+The original kata can be found [here](https://sammancoaching.org/kata_descriptions/tennis.html)
+
 ## Heuristics
 
 ### Be clear rather than clever
 
-Test exercise behavior in the system.
+Tests exercise behavior in the system.
 The key to making tests valuable over a long time is to make them easy to understand.
 As such, we should always favor being clear over being clever.
 That means we sometimes have to accept a little bit of duplication to aid readability and comprehension of the test.
